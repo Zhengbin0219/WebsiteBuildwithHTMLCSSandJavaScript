@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lanhe Living | Premium Metal Wardrobes</title>
+  <link rel="stylesheet" href="style.css" />
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+<header class="navbar">
+  <div class="container">
+    <h1 class="logo">Lanhe Living</h1>
+    <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+    
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#video">Video</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<header class="hero">
+  <div class="hero-content">
+    <h1>Elevate Your Space</h1>
+    <p>Modern metal wardrobes for simple, organized living.</p>
+    <a href="#products" class="btn">Browse Products</a>
+  </div>
+</header>
+
+<section class="content" id="about">
+  <div class="container">
+    <h2>About Our Products</h2>
+    <p>
+      We design minimalist, durable metal wardrobe systems to help you create organized and beautiful living spaces.
+    </p>
+  </div>
+</section>
+
+<section class="cards" id="products">
+  <div class="card">
+    <img src="product1.jpg" alt="Open metal wardrobe">
+    <h3>Open Metal Wardrobe</h3>
+    <p>Clean design with ample storage, perfect for bedrooms and entryways.</p>
+  </div>
+  <div class="card">
+    <img src="product2.jpg" alt="Minimalist clothing rack">
+    <h3>Minimalist Clothing Rack</h3>
+    <p>Durable white frame with caster wheels for easy mobility.</p>
+  </div>
+  <div class="card">
+    <img src="product3.jpg" alt="Modular storage unit">
+    <h3>Modular Storage Unit</h3>
+    <p>Expandable shelving solution to organize your daily essentials.</p>
+  </div>
+</section>
+
+<section class="video" id="video">
+  <h2>Watch Our Product In Action</h2>
+  <video controls class="responsive-video">
+    <source src="videos/wardrobe-demo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</section>
+
+<footer class="footer">
+  &copy; 2025 Lanhe Living-Modern Metal Wardrobes. All rights reserved.
+</footer>
+
+<script>
+  document.querySelector('.menu-toggle').addEventListener('click', function () {
+    document.querySelector('.nav-links').classList.toggle('active');
+  });
+</script>
+</body>
+</html>
+
