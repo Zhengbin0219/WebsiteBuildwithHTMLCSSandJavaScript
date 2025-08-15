@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lanhe Living | Premium Metal Wardrobes</title>
@@ -12,18 +15,24 @@
 </head>
 
 <body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
 <header class="navbar">
   <div class="container">
     <h1 class="logo">Lanhe Living</h1>
-    <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+
+  <button class="menu-toggle" id="navToggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle navigation">
+  <i class="fa-solid fa-bars"></i>
+  </button>
+  <nav aria-label="Primary">
+  <ul class="nav-links" id="primary-menu">
+    <li><a href="#products">Products</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="#video">Video</a></li>
+  </ul>
+  </nav>
     
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#products">Products</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#video">Video</a></li>
-      </ul>
-    </nav>
   </div>
 </header>
 <header class="hero">
@@ -34,7 +43,7 @@
   </div>
 </header>
 
-<section class="content" id="about">
+<section class="content" id="main">
   <div class="container">
     <h2>About Our Products</h2>
     <p>
@@ -59,6 +68,12 @@
     <h3>Modular Storage Unit</h3>
     <p>Expandable shelving solution to organize your daily essentials.</p>
   </div>
+
+  <div class="controls">
+  <button id="shuffleBtn" type="button">Shuffle</button>
+  <button id="filterBtn" type="button">Price ≤ $150</button>
+ </div>
+
 </section>
 
 <section class="video" id="video">
@@ -74,10 +89,41 @@
 </footer>
 
 <script>
-  document.querySelector('.menu-toggle').addEventListener('click', function () {
-    document.querySelector('.nav-links').classList.toggle('active');
-  });
+ 
+  var toggleBtn = document.getElementById('navToggle');
+  var menu = document.getElementById('primary-menu');
+  if (toggleBtn && menu) {
+    toggleBtn.addEventListener('click', function () {
+      var isOpen = menu.classList.toggle('active');
+      toggleBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+  }
+
+  var grid = document.querySelector('.cards');
+  var cards = Array.from(document.querySelectorAll('.cards .card'));
+  var shuffleBtn = document.getElementById('shuffleBtn');
+  var filterBtn = document.getElementById('filterBtn');
+
+  if (shuffleBtn) {
+      shuffleBtn.addEventListener('click', function () {
+      var shuffled = cards.slice().sort(function(){ return Math.random() - 0.5; });
+      shuffled.forEach(function(c){ grid.insertBefore(c, grid.querySelector('.controls')); });
+    });
+  }
+
+  if (filterBtn) {
+    filterBtn.addEventListener('click', function () {
+      
+      var expensive = cards[2];
+      if (expensive) {
+        var hidden = expensive.style.display === 'none';
+        expensive.style.display = hidden ? '' : 'none';
+        filterBtn.textContent = hidden ? 'Price ≤ $150' : 'Show All';
+      }
+    });
+  }
 </script>
+
 </body>
 </html>
 

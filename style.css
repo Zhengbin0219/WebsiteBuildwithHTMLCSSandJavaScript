@@ -6,7 +6,7 @@ body {
 
 .hero {
   height: 100vh;
-  background: url('hero-bg.jpg') center/contain no-repeat;
+  background: url('hero-bg.jpg') center/cover no-repeat;
   background-color: #000; 
   display: flex;
   align-items: center;
@@ -141,7 +141,7 @@ body {
 
 .logo {
   font-size: 1.5rem;
-  /* font-weight: bold; */
+
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -245,3 +245,37 @@ body {
     display: flex;
   }
 }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  background: #fff;
+  color: #000;
+  padding: .5rem .75rem;
+  border: 2px solid #000;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+:focus { outline: 3px solid #2b7cff; outline-offset: 2px; }
+
+
+.controls {
+  margin-top: 1rem;
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.controls button {
+  padding: .5rem .75rem;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.controls button:hover { background: #f7f7f7; }
+.controls button:focus { outline: 3px solid #2b7cff; outline-offset: 2px; }
